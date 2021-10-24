@@ -145,4 +145,108 @@
     <value>Common</value>
     <comment>category</comment>
   </data>
+  <data name="Authentication_Category" xml:space="preserve">
+    <value>Authentication</value>
+    <comment>category</comment>
+  </data>
+  <data name="Common_Category" xml:space="preserve">
+    <value>Common</value>
+    <comment>category</comment>
+  </data>
+  <data name="Input_Category" xml:space="preserve">
+    <value>Input</value>
+    <comment>category</comment>
+  </data>
+  <data name="Output_Category" xml:space="preserve">
+    <value>Output</value>
+    <comment>category</comment>
+  </data>
+  <data name="Options_Category" xml:space="preserve">
+    <value>Options</value>
+    <comment>category</comment>
+  </data>
+  <data name="ValidationScope_Error" xml:space="preserve">
+    <value>Cannot be used outside of a {0}.</value>
+    <comment>error message; {0} is a container activity (e.g. a scope)</comment>
+  </data>
+  <data name="ValidationValue_Error" xml:space="preserve">
+    <value>Please provide a value for {0}.</value>
+    <comment>error message; {0} is the name of a missing property</comment>
+  </data>
+  <data name="ValidationExclusiveProperties_Error" xml:space="preserve">
+    <value>Please provide a value either for {0} or {1}, but not both.</value>
+    <comment>error message; {0} &amp; {1} are mutually exclusive activities</comment>
+  </data>
+  <data name="ValidationOverloadGroup_Error" xml:space="preserve">
+    <value>Please provide values for both {0} and {1}.</value>
+    <comment>error message; {0} &amp; {1} are complementary properties</comment>
+  </data>
+  <data name="FileDialog_DisplayName" xml:space="preserve">
+    <value>File Dialog</value>
+    <comment>activity name</comment>
+  </data>
+  <data name="FileDialog_Description" xml:space="preserve">
+    <value>A File Open and File Save dialog to get input from attended operator about file / path location</value>
+    <comment>activity description</comment>
+  </data>
+  <data name="FileDialog_Title_DisplayName" xml:space="preserve">
+    <value>Title</value>
+    <comment>property name</comment>
+  </data>
+  <data name="FileDialog_Title_Description" xml:space="preserve">
+    <value>The title display at the top of the dialog box</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Input_Category" xml:space="preserve">
+    <value>Input</value>
+    <comment>category</comment>
+  </data>
+  <data name="FileDialog_DialogType_DisplayName" xml:space="preserve">
+    <value>Dialog Type</value>
+    <comment>property name</comment>
+  </data>
+  <data name="FileDialog_DialogType_Description" xml:space="preserve">
+    <value>Select from File Open or File Save Dialog</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Options_Category" xml:space="preserve">
+    <value>Options</value>
+    <comment>category</comment>
+  </data>
+  <data name="FileDialog_DefaultPath_DisplayName" xml:space="preserve">
+    <value>Default Path</value>
+    <comment>property name</comment>
+  </data>
+  <data name="FileDialog_DefaultPath_Description" xml:space="preserve">
+    <value>The place in the file system for the dialog to start from</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Input_Category" xml:space="preserve">
+    <value>Input</value>
+    <comment>category</comment>
+  </data>
+  <data name="FileDialog_FileTypeFilter_DisplayName" xml:space="preserve">
+    <value>File Type Filter</value>
+    <comment>property name</comment>
+  </data>
+  <data name="FileDialog_FileTypeFilter_Description" xml:space="preserve">
+    <value>Filters the dialog to select on the chosen file filter type</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Options_Category" xml:space="preserve">
+    <value>Options</value>
+    <comment>category</comment>
+  </data>
+  <data name="FileDialog_OutputPath_DisplayName" xml:space="preserve">
+    <value>Output Path</value>
+    <comment>property name</comment>
+  </data>
+  <data name="FileDialog_OutputPath_Description" xml:space="preserve">
+    <value>The file and path selected by the attended operator at runtime</value>
+    <comment>property description</comment>
+  </data>
+  <data name="Output_Category" xml:space="preserve">
+    <value>Output</value>
+    <comment>category</comment>
+  </data>
 </root>
