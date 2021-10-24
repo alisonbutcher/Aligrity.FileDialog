@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Aligrity.FileDialog.Activities.Properties;
 using UiPath.Shared.Activities;
 using UiPath.Shared.Activities.Localization;
+using Aligrity.FileDialog.Enums;
+using Microsoft.WindowsAPICodePack.Dialogs;
 
 namespace Aligrity.FileDialog.Activities
 {
@@ -35,7 +37,7 @@ namespace Aligrity.FileDialog.Activities
         [LocalizedDisplayName(nameof(Resources.FileDialog_DialogType_DisplayName))]
         [LocalizedDescription(nameof(Resources.FileDialog_DialogType_Description))]
         [LocalizedCategory(nameof(Resources.Options_Category))]
-        public InArgument<int> DialogType { get; set; }
+        public FileDialogs DialogType { get; set; }
 
         [LocalizedDisplayName(nameof(Resources.FileDialog_DefaultPath_DisplayName))]
         [LocalizedDescription(nameof(Resources.FileDialog_DefaultPath_Description))]
@@ -45,7 +47,7 @@ namespace Aligrity.FileDialog.Activities
         [LocalizedDisplayName(nameof(Resources.FileDialog_FileTypeFilter_DisplayName))]
         [LocalizedDescription(nameof(Resources.FileDialog_FileTypeFilter_Description))]
         [LocalizedCategory(nameof(Resources.Options_Category))]
-        public InArgument<int> FileTypeFilter { get; set; }
+        public FileTypeFilters FileTypeFilter { get; set; }
 
         [LocalizedDisplayName(nameof(Resources.FileDialog_OutputPath_DisplayName))]
         [LocalizedDescription(nameof(Resources.FileDialog_OutputPath_Description))]
@@ -69,7 +71,6 @@ namespace Aligrity.FileDialog.Activities
         protected override void CacheMetadata(CodeActivityMetadata metadata)
         {
             if (DialogType == null) metadata.AddValidationError(string.Format(Resources.ValidationValue_Error, nameof(DialogType)));
-
             base.CacheMetadata(metadata);
         }
 
@@ -77,10 +78,7 @@ namespace Aligrity.FileDialog.Activities
         {
             // Inputs
             var timeout = TimeoutMS.Get(context);
-            var title = Title.Get(context);
-            var dialogType = DialogType.Get(context);
-            var defaultPath = DefaultPath.Get(context);
-            var fileTypeFilter = FileTypeFilter.Get(context);
+
 
             // Set a timeout on the execution
             var task = ExecuteWithTimeout(context, cancellationToken);
@@ -88,15 +86,72 @@ namespace Aligrity.FileDialog.Activities
 
             // Outputs
             return (ctx) => {
-                OutputPath.Set(ctx, null);
+                OutputPath.Set(ctx, task.Result);
             };
         }
 
-        private async Task ExecuteWithTimeout(AsyncCodeActivityContext context, CancellationToken cancellationToken = default)
+        private async Task<string> ExecuteWithTimeout(AsyncCodeActivityContext context, CancellationToken cancellationToken = default)
         {
-            ///////////////////////////
-            // Add execution logic HERE
-            ///////////////////////////
+            var title = Title.Get(context);
+            var defaultPath = DefaultPath.Get(context);
+            var output = string.Empty;
+            var flt = new CommonFileDialogFilter();
+            dynamic dialog = new CommonOpenFileDialog();
+
+            // Selection of File Dialog type (leave default Open / Save)
+            if (DialogType == FileDialogs.Save)
+            {
+                dialog = new CommonSaveFileDialog();
+            }
+
+            // Dialog params
+            if (title != string.Empty) dialog.Title = title;
+            if (defaultPath != string.Empty)
+            {
+                dialog.InitialDirectory = defaultPath;
+            }
+
+            // Dialog File Filter Types
+            switch (this.FileTypeFilter)
+            {
+                case FileTypeFilters.Excel:
+                    flt.Extensions.Add("xlsx");
+                    flt.Extensions.Add("xlsm");
+                    flt.Extensions.Add("xls");
+                    flt.DisplayName = "Excel";
+                    break;
+                case FileTypeFilters.Word:
+                    flt.Extensions.Add("docx");
+                    flt.Extensions.Add("doc");
+                    flt.DisplayName = "Word";
+                    break;
+                case FileTypeFilters.PowerPoint:
+                    flt.Extensions.Add("pptx");
+                    flt.Extensions.Add("ppt");
+                    flt.DisplayName = "Powerpoint";
+                    break;
+                case FileTypeFilters.CSV:
+                    flt.Extensions.Add("csv");
+                    flt.DisplayName = "Comma Separated Variable";
+                    break;
+                case FileTypeFilters.Text:
+                    flt.Extensions.Add("txt");
+                    flt.DisplayName = "Text";
+                    break;
+                default:
+                    flt.Extensions.Add("*");
+                    flt.DisplayName = "All Files";
+                    break;
+            }
+
+            dialog.Filters.Add(flt);
+
+            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+            {
+                output = dialog.FileName;
+            }
+
+            return await Task.FromResult(output);
         }
 
         #endregion
