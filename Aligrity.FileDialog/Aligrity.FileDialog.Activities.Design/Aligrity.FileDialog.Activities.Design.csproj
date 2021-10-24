@@ -9,16 +9,16 @@
   <PropertyGroup>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <Description>File Open and File Save dialog for attended operation.</Description>
+    <Description>File Open and File Save dialog for attended operation. Based on a similar activity called Simple File Dialog created by Masaaki Yoshida</Description>
     <Authors>Aligrity</Authors>
     <Company>Aligrity</Company>
-    <Copyright>© 2021 Aligrity</Copyright>
+    <Copyright></Copyright>
     <PackageTags>UiPath Activit𝗒 File Dialog Open Save</PackageTags>
     <PackageProjectUrl>https://docs.uipath.com/integrations/docs/how-to-create-activities</PackageProjectUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/NuGet/Samples/master/PackageIconNuspecExample/icon.png</PackageIconUrl>
     <!--<PackageIcon>packageIcon.png</PackageIcon>--> <!--PackageIcon not yet supported in UiPath Studio-->
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <FileVersion>2.0.0.0</FileVersion>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
   </PropertyGroup>
@@ -27,7 +27,7 @@
     <PackageVersion>0.1.0.$([System.DateTime]::UtcNow.ToString(MMddHHmmss))</PackageVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Release'">
-    <PackageVersion>0.1.0</PackageVersion>
+    <PackageVersion>2.0.0</PackageVersion>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Designers\FileDialogDesigner.xaml" />
