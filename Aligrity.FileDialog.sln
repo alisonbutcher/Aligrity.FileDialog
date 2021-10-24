@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31727.386
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aligrity.FileDialog", "Aligrity.FileDialog", "{4C6DAC7D-8F08-4F25-8D02-6CB21152E4F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aligrity.FileDialog", "Aligrity.FileDialog\Aligrity.FileDialog\Aligrity.FileDialog.csproj", "{0F632309-2B7C-4CFF-B67B-6D72D564F015}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aligrity.FileDialog.Activities", "Aligrity.FileDialog\Aligrity.FileDialog.Activities\Aligrity.FileDialog.Activities.csproj", "{F93638D7-F4F8-4771-8E10-B6B1BF441F4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aligrity.FileDialog.Activities.Design", "Aligrity.FileDialog\Aligrity.FileDialog.Activities.Design\Aligrity.FileDialog.Activities.Design.csproj", "{463FEECB-0F8E-451B-8B87-7BDAB13FD214}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{A9BF6F20-2A7C-485D-8A19-97080A72EC68}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "UiPath.Shared.Activities", "Shared\UiPath.Shared.Activities\UiPath.Shared.Activities.shproj", "{4546856D-EA50-45C6-9419-EEEACB5A80AA}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "UiPath.Shared.Activities.Design", "Shared\UiPath.Shared.Activities.Design\UiPath.Shared.Activities.Design.shproj", "{DF9C43F0-ADD3-4FBF-995E-84B92F9CBF25}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Shared\UiPath.Shared.Activities\UiPath.Shared.Activities.projitems*{4546856d-ea50-45c6-9419-eeeacb5a80aa}*SharedItemsImports = 13
+		Shared\UiPath.Shared.Activities.Design\UiPath.Shared.Activities.Design.projitems*{463feecb-0f8e-451b-8b87-7bdab13fd214}*SharedItemsImports = 5
+		Shared\UiPath.Shared.Activities.Design\UiPath.Shared.Activities.Design.projitems*{df9c43f0-add3-4fbf-995e-84b92f9cbf25}*SharedItemsImports = 13
+		Shared\UiPath.Shared.Activities\UiPath.Shared.Activities.projitems*{f93638d7-f4f8-4771-8e10-b6b1bf441f4a}*SharedItemsImports = 5
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F632309-2B7C-4CFF-B67B-6D72D564F015}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F632309-2B7C-4CFF-B67B-6D72D564F015}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F632309-2B7C-4CFF-B67B-6D72D564F015}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F632309-2B7C-4CFF-B67B-6D72D564F015}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F93638D7-F4F8-4771-8E10-B6B1BF441F4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F93638D7-F4F8-4771-8E10-B6B1BF441F4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F93638D7-F4F8-4771-8E10-B6B1BF441F4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F93638D7-F4F8-4771-8E10-B6B1BF441F4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{463FEECB-0F8E-451B-8B87-7BDAB13FD214}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{463FEECB-0F8E-451B-8B87-7BDAB13FD214}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{463FEECB-0F8E-451B-8B87-7BDAB13FD214}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{463FEECB-0F8E-451B-8B87-7BDAB13FD214}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0F632309-2B7C-4CFF-B67B-6D72D564F015} = {4C6DAC7D-8F08-4F25-8D02-6CB21152E4F6}
+		{F93638D7-F4F8-4771-8E10-B6B1BF441F4A} = {4C6DAC7D-8F08-4F25-8D02-6CB21152E4F6}
+		{463FEECB-0F8E-451B-8B87-7BDAB13FD214} = {4C6DAC7D-8F08-4F25-8D02-6CB21152E4F6}
+		{4546856D-EA50-45C6-9419-EEEACB5A80AA} = {A9BF6F20-2A7C-485D-8A19-97080A72EC68}
+		{DF9C43F0-ADD3-4FBF-995E-84B92F9CBF25} = {A9BF6F20-2A7C-485D-8A19-97080A72EC68}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FFA3FB1D-8AD4-4AD9-985E-6E628BFE52D3}
+	EndGlobalSection
+EndGlobal
