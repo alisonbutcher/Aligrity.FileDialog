@@ -19,6 +19,6 @@ A UIPath Studio File Open and File Save Dialog for Attended bots
 </figure>
 
 <figure>
-<img src="https://github.com/alisonbutcher/Aligrity.FileDialog/blob/84ee951bc167e1804ef970cae33e6ecd4fb91fb3/FileDialogProperties.pngg" width="500"/>
+<img src="https://github.com/alisonbutcher/Aligrity.FileDialog/blob/84ee951bc167e1804ef970cae33e6ecd4fb91fb3/FileDialogProperties.png" width="500"/>
   <figcaption>Select Properties of the dialog. Dialog type selects between Open and Save Dialogs</figcaption>
 </figure>
